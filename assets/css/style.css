@@ -11,7 +11,6 @@
   --border-subtle: rgba(226, 232, 240, 0.12);
 }
 
-/* [PUNTO 1 - INIZIO FILE] Corretto il selettore universale da "-" a "*" e bloccato lo scroll orizzontale */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -525,7 +524,7 @@ a {
 
 .footer-socials {
   display: flex;
-  flex-wrap: wrap; /* [PUNTO 2 - SEZIONE FOOTER] Permette ai link social di andare a capo su mobile */
+  flex-wrap: wrap;
   gap: 14px 20px;
 }
 
@@ -563,7 +562,7 @@ a {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 60px; /* [PUNTO 3 - SEZIONE RESPONSIVE] Allineato esattamente sotto la navbar sticky */
+    top: 60px;
     left: 0;
     width: 100%;
     background-color: var(--bg-card);
@@ -572,7 +571,6 @@ a {
     gap: 16px;
   }
 
-  /* [PUNTO 3 - SEZIONE RESPONSIVE] Fix contrasto testo menu mobile su sfondo blu scuro */
   .nav-links a {
     color: var(--text-light);
     font-size: 1.05rem;
@@ -591,13 +589,11 @@ a {
     display: flex;
   }
 
-  /* [PUNTO 4 - SEZIONE RESPONSIVE] Icone software centrate e su più righe su mobile */
   .icone-software {
     justify-content: center;
     gap: 20px;
   }
 
-  /* [PUNTO 5 - SEZIONE RESPONSIVE] Centra i link social nel footer su smartphone */
   .footer-socials {
     justify-content: center;
     width: 100%;
