@@ -17,9 +17,8 @@
   padding: 0;
 }
 
-html, body {
+html {
   max-width: 100%;
-  overflow-x: hidden;
 }
 
 body {
@@ -30,6 +29,8 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 main {
@@ -545,6 +546,18 @@ a {
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  body {
+    padding-top: 62px;
+  }
+
   .hero-grid,
   .grid-3,
   .about-intro,
