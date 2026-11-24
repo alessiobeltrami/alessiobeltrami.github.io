@@ -11,10 +11,16 @@
   --border-subtle: rgba(226, 232, 240, 0.12);
 }
 
-* {
+/* [PUNTO 1 - INIZIO FILE] Corretto il selettore universale da "-" a "*" e bloccato lo scroll orizzontale */
+*, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -196,7 +202,9 @@ a {
 .icone-software {
   display: flex;
   align-items: center;
-  gap: 106px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
 }
 
 /* SECTIONS GENERIC */
@@ -517,7 +525,8 @@ a {
 
 .footer-socials {
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap; /* [PUNTO 2 - SEZIONE FOOTER] Permette ai link social di andare a capo su mobile */
+  gap: 14px 20px;
 }
 
 .footer-socials a {
@@ -554,12 +563,24 @@ a {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 68px;
+    top: 60px; /* [PUNTO 3 - SEZIONE RESPONSIVE] Allineato esattamente sotto la navbar sticky */
     left: 0;
     width: 100%;
     background-color: var(--bg-card);
     padding: 20px 24px;
     border-bottom: 1px solid var(--border-subtle);
+    gap: 16px;
+  }
+
+  /* [PUNTO 3 - SEZIONE RESPONSIVE] Fix contrasto testo menu mobile su sfondo blu scuro */
+  .nav-links a {
+    color: var(--text-light);
+    font-size: 1.05rem;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: var(--accent-yellow);
   }
 
   .nav-links.open {
@@ -568,5 +589,17 @@ a {
 
   .hamburger {
     display: flex;
+  }
+
+  /* [PUNTO 4 - SEZIONE RESPONSIVE] Icone software centrate e su più righe su mobile */
+  .icone-software {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  /* [PUNTO 5 - SEZIONE RESPONSIVE] Centra i link social nel footer su smartphone */
+  .footer-socials {
+    justify-content: center;
+    width: 100%;
   }
 }
