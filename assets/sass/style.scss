@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-/ VARIABILI SASS /
+/* VARIABILI SASS */
 $bg-night: #0B132B;
 $bg-card: #1C2541;
 $bg-thumb: #141d38;
@@ -17,7 +17,7 @@ $font-stack: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
 $bp-tablet: 992px;
 $bp-mobile: 768px;
 
-/ RESET & BASE/
+/* RESET & BASE */
 *,
 *::before,
 *::after {
@@ -63,7 +63,7 @@ iframe {
   padding: 0 24px;
 }
 
-/ NAVBAR (STICKY) /
+/* NAVBAR (STICKY) */
 .navbar {
   background-color: $nav-footer-bg;
   backdrop-filter: blur(10px);
@@ -123,7 +123,7 @@ iframe {
   }
 }
 
-/ BUTTONS (CTA GIALLO) /
+/* BUTTONS (CTA GIALLO) */
 .btn-yellow {
   display: inline-block;
   background-color: $accent-yellow;
@@ -161,7 +161,7 @@ iframe {
   }
 }
 
-/ HERO SECTION /
+/* HERO SECTION */
 .hero {
   padding: 90px 0 50px;
 
@@ -217,10 +217,11 @@ iframe {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 56px;
+  justify-content: space-between;
+  gap: 24px;
 }
 
-/ SEZIONI GENERICHE, CARDS & TAGS /
+/* SEZIONI GENERICHE, CARDS & TAGS */
 .section {
   padding: 60px 0;
 
@@ -282,7 +283,7 @@ iframe {
   }
 }
 
-/ ABOUT PAGE /
+/* ABOUT PAGE */
 .about-intro {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
@@ -328,7 +329,7 @@ iframe {
   }
 }
 
-/ PROJECTS PAGE /
+/* PROJECTS PAGE */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -390,7 +391,7 @@ iframe {
   }
 }
 
-/ CV PAGE /
+/* CV PAGE */
 .cv-header {
   display: flex;
   justify-content: space-between;
@@ -450,7 +451,7 @@ iframe {
   }
 }
 
-/ CONTACT PAGE /
+/* CONTACT PAGE */
 .contact-grid {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
@@ -517,7 +518,7 @@ iframe {
   }
 }
 
-/ FOOTER /
+/* FOOTER */
 .footer {
   background-color: $nav-footer-bg;
   border-top: 0 solid $border-subtle;
@@ -535,7 +536,8 @@ iframe {
 
     .footer-socials {
       display: flex;
-      gap: 20px;
+      flex-wrap: wrap;
+      gap: 14px 20px;
 
       a {
         color: $text-dark;
@@ -555,7 +557,7 @@ iframe {
   }
 }
 
-/ RESPONSIVE — TABLET /
+/* RESPONSIVE — TABLET */
 @media (max-width: $bp-tablet) {
   .container,
   .nav-container {
@@ -591,9 +593,18 @@ iframe {
   }
 }
 
-/ RESPONSIVE — MOBILE /
+/* RESPONSIVE — MOBILE */
 @media (max-width: $bp-mobile) {
+  body {
+    padding-top: 56px;
+  }
+
   .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
     padding: 12px 0;
 
     .nav-links {
@@ -610,6 +621,12 @@ iframe {
 
       a {
         color: $text-light;
+        font-size: 1.05rem;
+
+        &:hover,
+        &.active {
+          color: $accent-yellow;
+        }
       }
 
       &.open {
@@ -640,7 +657,8 @@ iframe {
   }
 
   .icone-software {
-    gap: 24px;
+    justify-content: center;
+    gap: 20px;
   }
 
   .section {
@@ -680,5 +698,10 @@ iframe {
   .footer {
     margin-top: 40px;
     padding: 24px 0;
+
+    .footer-top .footer-socials {
+      justify-content: center;
+      width: 100%;
+    }
   }
 }
